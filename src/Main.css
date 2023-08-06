@@ -1,0 +1,352 @@
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    background-color: white;
+    padding: 30px 20px;
+    color: black;
+    width: 70%;
+    /* 화면 가로의 70% 공간만 사용 */
+    margin: 0 auto;
+    /* 가운데 정렬을 위해 margin을 auto로 설정 */
+    border-top-left-radius: 10px;
+    /* 상단 왼쪽 둥근 모서리 반경 설정 */
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #ccc;
+    /* 아랫부분에 회색 선 경계를 만듭니다 */
+    justify-content: space-around;
+  }
+  
+  .navbar-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar-item {
+    margin-right: 20px;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+  
+  .navbar-item:last-child {
+    margin-right: 0;
+    /* 마지막 항목은 오른쪽 마진을 제거하여 간격을 조정합니다 */
+    border-right: none;
+    /* 마지막 항목은 오른쪽 선을 제거합니다 */
+  }
+  
+  /* 탭 ui부분 */
+  /* My Page */
+  .my-page {
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: gray;
+  }
+  
+  /* Navigation Links */
+  
+  .bottompage {
+    width: 75%;
+    height: 1100px;
+    border-radius: 20px;
+    background-color: white;
+    text-align: center;
+    padding-top: 40px;
+    margin: 0 auto;
+  }
+  
+  .flex-column {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    border-radius: 5px; /* Add rounded corners */
+    padding: 10px;
+    margin: 0 auto;
+  }
+  
+  .nav-links .nav-link {
+    border-top: 1px solid black; /* Add top border for each link */
+    padding: 10px 0;
+    color: black;
+    text-decoration: none;
+    transition: background-color 0.3s; /* Add smooth transition for background color change */
+  }
+  
+  .nav-links .nav-link:first-child {
+    border-top: none; /* Remove top border from the first link */
+  }
+  
+  .b-left-page {
+    padding-left: 50px;
+  }
+  
+  /* Styling for the right page */
+  .b-right-page {
+    flex: 1; /* Expand to take remaining space */
+    padding: 20px; /* Add padding */
+  }
+  
+  .selected {
+    background-color: #9ce3c9; /* Change background color to lightgreen for selected link */
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  /* 서비스 이용약관 가로스크롤 */
+  .pre-container0,
+  .pre-container1,
+  .pre-container3,
+  .pre-container4,
+  .pre-container5,
+  .pre-container6,
+  .pre-container7 {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+  
+  .pre-content5,
+  .pre-content6 {
+    white-space: pre-wrap; /* Preserve whitespace and break lines */
+  }
+  
+  .pre-container0 hr,
+  .pre-container1 hr,
+  .pre-container3 hr,
+  .pre-container4 hr,
+  .pre-container5 hr,
+  .pre-container6 hr,
+  .pre-container7 hr {
+    border: 2px solid black; /* Adjust border thickness */
+  }
+  
+  /* 찜한상품 */
+  .product {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* 가로줄 추가 */
+  }
+  
+  .jjim-product-image {
+    width: 80px; /* 조정 가능한 이미지 크기 */
+    height: auto;
+  }
+  .product-info {
+    flex: 1;
+    margin-left: 10px;
+    display: flex;
+  }
+  
+  .product-brand {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .product-name {
+    font-size: 10px;
+  }
+  
+  .delete-button {
+    font-size: 12px;
+    background-color: transparent;
+    border: 1px solid #ccc; /* 테두리 스타일 설정 */
+    border-radius: 4px; /* 테두리 살짝 둥글게 설정 */
+    padding: 2px 6px; /* 버튼 내용과 테두리 사이의 여백 설정 */
+    cursor: pointer;
+    color: gray;
+  }
+  
+  /* 찜한 레시피 */
+  
+  .recipe,
+  .myreview {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* 가로줄 추가 */
+  }
+  
+  .jjim-product-image {
+    width: 80px; /* 조정 가능한 이미지 크기 */
+    height: auto;
+  }
+  .recipe-info,
+  .myreview-info {
+    flex: 1;
+    margin-left: 10px;
+    display: flex;
+  }
+  
+  .recipe-name,
+  .myreview-name {
+    font-size: 10px;
+    font-weight: bold;
+  }
+  
+  .delete-button,
+  .edit-button {
+    font-size: 12px;
+    background-color: transparent;
+    border: 1px solid #ccc; /* 테두리 스타일 설정 */
+    border-radius: 4px; /* 테두리 살짝 둥글게 설정 */
+    padding: 2px 6px; /* 버튼 내용과 테두리 사이의 여백 설정 */
+    cursor: pointer;
+    color: gray;
+  }
+  
+  /* 클린체험단 버튼 */
+  
+  /* 전체 네비게이션 바에 대한 스타일 */
+  .preuser-nav {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    background-color: #f8f9fa; /* 밝은 회색 배경색 */
+    margin: 0 auto; /* 가운데 정렬 */
+    justify-content: space-between;
+  }
+  
+  .preuser-nav .nav-link {
+    flex: 0 1 50%; /* 버튼이 가로의 절반씩 차지하도록 설정 */
+    padding: 5px 145px; /* 패딩을 원하는 대로 조정하세요 */
+    background-color: #f8f9fa; /* 밝은 회색 배경색 */
+    color: #83888d; /* 어두운 회색 글씨 */
+    border: none; /* 테두리 없음 */
+    text-align: center;
+    border-radius: 0; /* 테두리 둥글기 제거 */
+    transition: background-color 0.3s, color 0.3s; /* 애니메이션 효과 */
+    font-weight: bold; /* 글꼴 두껍게 설정 */
+  }
+  
+  .preuser-nav .nav-link.active {
+    background-color: #fff; /* 흰색 배경색 */
+    color: #000; /* 검정색 글씨 */
+    font-weight: bold; /* 글꼴 두껍게 설정 */
+    border: 3px solid #28a745; /* 초록색 테두리 */
+    border-radius: 5px; /* 테두리 둥글기 */
+  }
+  
+  /* 각 네비게이션 링크에 대한 스타일 */
+  .preuser-link {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: transparent; /* 배경색 투명 */
+    color: #6c757d; /* 어두운 회색 글씨 */
+    border: 1px solid transparent; /* 초기에는 테두리 없음 */
+    border-radius: 0; /* 테두리 둥글기 없음 */
+    transition: all 0.3s; /* 애니메이션 효과 지정 */
+    width: 100%; /* 너비의 절반씩 차지 */
+  }
+  
+  /* 버튼이 선택됐을 때의 스타일 */
+  .preuser-link.active {
+    flex: 1;
+    background-color: #fff; /* 흰색 배경색 */
+    color: #000; /* 검정색 글씨 */
+    border-color: #28a745; /* 초록색 테두리 */
+  }
+  
+  /* gnb 스타일 */
+  /* GNB 스타일 */
+  
+  .gnb {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .gnb a {
+    text-decoration: none;
+    color: inherit;
+  }
+  ul {
+    list-style: none;
+  }
+  .gnb .depth1 {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .gnb .depth1 > li {
+    display: inline-block;
+    font-size: 14px;
+    padding: 0px 20px;
+    vertical-align: top;
+  }
+  .gnb .depth1 > li:hover > a {
+    color: #009f50;
+    border-bottom: 4px solid #009f50; /* 초록색 밑줄을 추가합니다. */
+  }
+  .gnb .depth1 > li > a {
+  }
+  
+  .gnb .depth2 {
+    display: none;
+    position: absolute;
+    padding: 40px;
+    width: 600px;
+    left: 40%;
+    transform: translateX(-50%);
+  }
+  
+  .gnb .depth1 > li:hover > .depth2 {
+    display: flex;
+  }
+  .gnb .depth2 li {
+    padding-top: 30px;
+    position: relative;
+    right: 100px;
+  }
+  
+  .gnb .depth1 > li:hover .depth2 li:hover > a {
+    padding: 10px 20px;
+    background: rgba(0, 159, 80, 0.5); /* 밑줄 색상 변경 */
+  }
+  
+  .gnb .depth3 {
+    display: none;
+    position: absolute;
+    padding-left: 0; /* 들여쓰기 제거 */
+    top: 16px;
+    left: 100%;
+  }
+  .gnb .depth3 li {
+    padding: 10px;
+    display: grid;
+    white-space: nowrap;
+  }
+  .gnb .depth2 li:hover > .depth3 {
+    display: flex;
+    left: 750px;
+  }
+  .gnb .depth2 li:hover > a + .depth3 {
+  }
+  .depth3 a:hover {
+    color: #009f50;
+  }
+  
+  .gnb .smallbox {
+    position: absolute;
+    width: 157%;
+    height: 300px;
+    background-color: white;
+    left: -87px;
+  }
+  .gnb .message {
+    font-size: 25px;
+    position: fixed;
+    top: 70px;
+    left: 50px;
+  }
+  
+  .middle-part {
+    display: flex;
+  }
+  
