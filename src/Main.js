@@ -3,6 +3,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
 import './Main.css'
 import PDetailBlock from './components/PDetail';
+import Info from './components/ProductInfo';
 
 
 const Main = () => {
@@ -85,6 +86,7 @@ const Main = () => {
         </div>
         <hr/>
         <PDetailBlock/>
+        <Info/>
       </div>
     );
   };
