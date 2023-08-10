@@ -14,12 +14,13 @@ import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 const Main = () => {
-    // b-right-page변경하기위해 기본 스테이트
+    // b-right-page변경하기위해 기본 스테이트 
     let [탭, 탭변경] = useState(0);
 
     //클린체험단 스테이트
     let [tab, Settab] = useState(0);
 
+    
     //찜한 상품들
     const [products, setProducts] = useState([
         { id: 1, brand: "브랜드명 1", name: "제품명 1", deleted: false },
@@ -113,16 +114,16 @@ const Main = () => {
 
     // const sendReview = () => {
     //     let score = clicked.filter(Boolean).length;
-        // fetch('http://52.78.63.175:8000/movie', {
-        //   method: 'POST',
-        //   Headers: {
-        //     Authroization: 'e7f59ef4b4900fe5aa839fcbe7c5ceb7',
-        //   },
-        //   body: JSON.stringify({
-        //     movie_id:1
-        //     star: score,
-        //   }),
-        // });
+    // fetch('http://52.78.63.175:8000/movie', {
+    //   method: 'POST',
+    //   Headers: {
+    //     Authroization: 'e7f59ef4b4900fe5aa839fcbe7c5ceb7',
+    //   },
+    //   body: JSON.stringify({
+    //     movie_id:1
+    //     star: score,
+    //   }),
+    // });
     // };
     //이미지 업로드하는 부분
     // let [mainImg, setMainImg] = useState("");
@@ -138,7 +139,7 @@ const Main = () => {
     // }
 
 
-
+    
 
 
 
@@ -235,10 +236,10 @@ const Main = () => {
                             // myreviews={myreviews}
                             handleDelete0={handleDelete0}
                             handleDelete1={handleDelete1}
-                            // handleDelete2={handleDelete2}
+                        // handleDelete2={handleDelete2}
 
-                            // showEditPopup={showEditPopup}
-                            // setShowEditPopup={setShowEditPopup}
+                        // showEditPopup={showEditPopup}
+                        // setShowEditPopup={setShowEditPopup}
                         />
                     </div>
                 </div>
@@ -317,8 +318,34 @@ const Main = () => {
 
         </div>
     );
-        };
+};
 function TabContent(props) {
+    //클린래시피 모달
+    const [selectedTab, setSelectedTab] = useState('preuser-app'); // 초기값 설정
+    
+
+    //로그아웃 모달
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = () => {
+        setShowModal(true);
+    };
+
+    const closeModal = () => {
+        setShowModal(false);
+    };
+
+    const handleLogout = () => {
+        // Perform your logout logic here
+        // For example: clear authentication token, redirect to login, etc.
+        closeModal(); // Close the modal after successful logout
+    };
+
+   
+    
+    
+
+
     if (props.탭 == 0) {
         return (
             <div>
@@ -391,7 +418,72 @@ function TabContent(props) {
             </div>
         );
     } else if (props.탭 == 2) {
+
+
+
+        const handleTabChange = (eventKey) => {
+            setSelectedTab(eventKey);
+        };
+
+
+        //클린 체험단 > 신청내역
+        const images = [
+            {
+                src: 'cleanimg.jpg',
+                progress: '진행중',
+                title: '제목',
+                deadline: '모집 기간',
+            }, {
+                src: 'cleanimg.jpg',
+                progress: '진행중',
+                title: '제목',
+                deadline: '모집 기간',
+            },
+            {
+                src: 'cleanimg.jpg',
+                progress: '진행중',
+                title: '제목',
+                deadline: '모집 기간',
+            },
+            {
+                src: 'cleanimg.jpg',
+                progress: '진행중',
+                title: '제목',
+                deadline: '모집 기간',
+            },
+        ];
+
+        //클린 체험단 > 당첨 내역
+        const images2 = [
+            {
+                src: 'cleanimg.jpg',
+                progress: '마감',
+                title: '제목',
+                deadline: '모집 기간',
+            }, {
+                src: 'cleanimg.jpg',
+                progress: '마감',
+                title: '제목',
+                deadline: '모집 기간',
+            },
+            {
+                src: 'cleanimg.jpg',
+                progress: '마감',
+                title: '제목',
+                deadline: '모집 기간',
+            },
+            {
+                src: 'cleanimg.jpg',
+                progress: '마감',
+                title: '제목',
+                deadline: '모집 기간',
+            },
+        ];
+
+
         return (
+
+
             <div>
                 <div className="pre-container">
                     <h2>클린 체험단</h2>
@@ -401,6 +493,8 @@ function TabContent(props) {
                             variant="pills"
                             defaultActiveKey="preuser-app"
                             className="preuser-nav"
+                            activeKey={selectedTab}
+                            onSelect={handleTabChange}
                         >
                             <Nav.Item>
                                 <Nav.Link eventKey="preuser-app" className="preuser-link">
@@ -413,13 +507,37 @@ function TabContent(props) {
                                 </Nav.Link>
                             </Nav.Item>
                         </Nav>
+                        {selectedTab === 'preuser-app' && (
+                            <div className="image-grid">
+                                {images.map((image, index) => (
+                                    <div className="image-item" key={index}>
+                                        <img src={image.src} alt={`Image ${index}`} />
+                                        <div className="image-details">
+                                            <p className="process1">{image.progress}</p>
+                                            <p className="imgtitle1">{image.title}</p>
+                                            <p className="imgdeadline1">{`${image.deadline}`}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
 
-                        {/* if (props.tab ==0){
-                        <div>1</div>
-                    }
-                    else if (props.tab == 1){
-                        <div>2</div>
-                    } */}
+                        {selectedTab === 'preuser-win' && (
+                            <div className="image-grid2">
+                                {images2.map((image, index) => (
+                                    <div className="image-item2" key={index}>
+                                        <img src={image.src} alt={`Image ${index}`} />
+                                        <div className="image-details2">
+                                            <p className="process2">{image.progress}</p>
+                                            <p className="imgtitle2">{image.title}</p>
+                                            <p className="imgdeadline2">{` ${image.deadline}`}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+
                     </div>
                 </div>
             </div>
@@ -584,15 +702,47 @@ function TabContent(props) {
             </div>
         );
     } else if (props.탭 == 7) {
+
+
         return (
             <div>
                 <div className="pre-container7">
                     <h2>계정 관리</h2>
                     <hr />
                 </div>
+
+                <div className="logincontainer">
+                    <p className="loginp">로그인 방식</p>
+                    <img src="/naverimg.jpg" alt="Naver" />
+                    <button className="logout-button"  onClick={openModal} button="true" >로그아웃</button>
+                    <button className="delete-account-button">탈퇴하기</button>
+                </div>
+
+                {showModal && <LogoutModal closeModal={closeModal} handleLogout={handleLogout} />}
+
             </div>
         );
     }
+    
 }
+function LogoutModal({ showModal, closeModal, handleLogout }) {
+    return (
+        <div className="modal">
+            <div className="logout-popup">
+                <p>로그아웃하시겠습니까?</p>
+                <button onClick={handleLogout}>네</button>
+                <button onClick={closeModal}>아니오</button>
+            </div>
+
+            {showModal && <LogoutModal closeModal={closeModal} handleLogout={handleLogout} />}
+
+        </div>
+
+        
+    );
+}
+
+
+
 
 export default Main;
