@@ -17,7 +17,7 @@ const Main = () => {
             brand: '브랜드명',
             name: '제품명',
             price: '가격',
-            rating: 4.5,
+            rating: '★★★★☆',
             reviewCount: '리뷰 갯수',
             image: 'product.jpg',
         },
@@ -26,7 +26,7 @@ const Main = () => {
             brand: '브랜드명',
             name: '제품명',
             price: '가격',
-            rating: 4.5,
+            rating: '★★★★☆',
             reviewCount: '리뷰 갯수',
             image: 'product.jpg',
         },
@@ -35,7 +35,7 @@ const Main = () => {
             brand: '브랜드명',
             name: '제품명',
             price: '가격',
-            rating: 4.5,
+            rating: '★★★★☆',
             reviewCount: '리뷰 갯수',
             image: 'product.jpg',
         },
@@ -44,7 +44,7 @@ const Main = () => {
             brand: '브랜드명',
             name: '제품명',
             price: '가격',
-            rating: 4.5,
+            rating: '★★★★☆',
             reviewCount: '리뷰 갯수',
             image: 'product.jpg',
         },
@@ -53,7 +53,7 @@ const Main = () => {
             brand: '브랜드명',
             name: '제품명',
             price: '가격',
-            rating: 4.5,
+            rating: '★★★★☆',
             reviewCount: '리뷰 갯수',
             image: 'product.jpg',
         },
@@ -62,7 +62,7 @@ const Main = () => {
             brand: '브랜드명',
             name: '제품명',
             price: '가격',
-            rating: 4.5,
+            rating: '★★★★☆',
             reviewCount: '리뷰 갯수',
             image: 'product.jpg',
         },
@@ -71,7 +71,7 @@ const Main = () => {
             brand: '브랜드명',
             name: '제품명',
             price: '가격',
-            rating: 4.5,
+            rating: '★★★★☆',
             reviewCount: '리뷰 갯수',
             image: 'product.jpg',
         },
@@ -80,7 +80,7 @@ const Main = () => {
             brand: '브랜드명',
             name: '제품명',
             price: '가격',
-            rating: 4.5,
+            rating: '★★★★☆',
             reviewCount: '리뷰 갯수',
             image: 'product.jpg',
         },
@@ -89,7 +89,7 @@ const Main = () => {
             brand: '브랜드명',
             name: '제품명',
             price: '가격',
-            rating: 4.5,
+            rating: '★★★★☆',
             reviewCount: '리뷰 갯수',
             image: 'product.jpg',
         }
@@ -107,6 +107,9 @@ const Main = () => {
     };
 
 
+    //분류
+    let [PDetail, PD] = useState(['식물성 단백질', '그래놀라/씨앗/견과류', 'Rectangle 179', '브랜드명', '제품명']);
+
     return (
         <div className="App">
 
@@ -121,6 +124,17 @@ const Main = () => {
                 </ul>
 
             </nav>
+            <div className='category'>
+                <a className='ctgr' href=''>비건&다이어트</a>
+                <span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span>
+                <a className='ctgr' href=''>{PDetail[0]}</a>
+                <span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span>
+                <a className='ctgr' href=''>{PDetail[1]}</a>
+            </div>
+
+            <div className='search-result'>
+                <p className='search-result-p'>검색 결과 총 n건</p>
+            </div>
 
             <div className='pricesort'>
                 <div button className='login'> 추천순 &nbsp; </div>
@@ -129,6 +143,8 @@ const Main = () => {
                 <span className='divider'>  | &nbsp; </span>
                 <div button className='customer_center'> 높은 가격순 </div>
             </div>
+
+
 
             {/* 상품 목록 */}
             <div className="product-grid">
@@ -153,6 +169,7 @@ const Main = () => {
                             <div className="rating-container">
                                 <p className="rating">{product.rating}</p>
                             </div>
+                            <p className='reviewCount'>{product.reviewCount}</p>
                         </div>
                     </div>
                 ))}
