@@ -43,10 +43,21 @@
   .user {
     display: flex;
     align-items: center;
-    color: #fff;
+    
   }
   
   .user .item {
     margin-right: 10px;
   }
   
+  .head-mypage,
+  .customer_center{
+    border: none;
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    color: #fff;
+  }
+  .divider{
+    color: #fff;
+  }

@@ -19,11 +19,10 @@ const Header = () =>{
           
         </div>
         <div className='user'>
-          <div button className='login'> 로그인 &nbsp; </div>   
-          <span className='divider'> | &nbsp; </span>
-          <div button className='sign-up'> 회원 가입 &nbsp; </div>    
-          <span className='divider'>  | &nbsp; </span>
-          <div button className='customer_center'> 고객 센터 </div>
+          
+          <button className='head-mypage'> 마이페이지 &nbsp; </button>    
+          <span className='divider'>  |  </span>
+          <button className='customer_center'> 고객 센터 </button>
         </div>
       </div>
     </header>
