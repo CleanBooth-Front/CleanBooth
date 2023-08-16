@@ -1022,6 +1022,13 @@ textarea{
 }
 
 
+.image-container img {
+  max-width: 100%; /* 이미지가 컨테이너 너비를 넘지 않도록 설정합니다 */
+  max-height: 100%; /* 이미지가 컨테이너 높이를 넘지 않도록 설정합니다 */
+  object-fit: cover; /* 이미지가 비율을 유지하며 적절하게 맞춰지도록 설정합니다 */
+}
+
+
 
 /* 수정모달 전체 정렬 */
 .edit-box {

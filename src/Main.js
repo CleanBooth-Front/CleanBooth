@@ -187,7 +187,10 @@ function EditModal({ closeeditModal, handleReviewUpdate }) {
     let [editmodal, setEditModal] = useState(false);
 
     const [inputCount, setInputCount] = useState(0);
+    const [inputCount2, setInputCount2] = useState(0);
+
     let [content, setContent] = useState("");
+    let [content2, setContent2] =useState("");
 
     const onTextareaHandler = (e) => {
 
@@ -195,10 +198,19 @@ function EditModal({ closeeditModal, handleReviewUpdate }) {
             e.target.value
         );
         setInputCount(
-            e.target.value.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g, "$&$1$2").length
+            e.target.value.length
 
         );
     };
+
+    const onTextareaHandler2 = (e) => {
+        setContent2(
+            e.target.value
+        );
+        setInputCount2(
+            e.target.value.length
+        );
+    }
 
     //이미지 업로드하는 부분
     let [mainImg, setMainImg] = useState("");
@@ -211,6 +223,7 @@ function EditModal({ closeeditModal, handleReviewUpdate }) {
         };
 
         reader.readAsDataURL(event.target.files[0]);
+        console.log("great");
     }
     const ARRAY = [0, 1, 2, 3, 4];
     return (
@@ -248,7 +261,7 @@ function EditModal({ closeeditModal, handleReviewUpdate }) {
 
                     <div className="box-explanation">
                         <div className="textarea-wrapper">
-                            <textarea value={content} onChange={(e) => { setContent(e.target.value) }} maxLength="5000" placeholder="내용을 입력하세요."></textarea>
+                            <textarea value={content} onChange={onTextareaHandler} maxLength="5000" placeholder="내용을 입력하세요."></textarea>
                             <p className="box-explanation-p">
                                 <span>{inputCount}</span>
                                 <span>/5000</span>
@@ -264,9 +277,9 @@ function EditModal({ closeeditModal, handleReviewUpdate }) {
 
                     <div className="box-explanation">
                         <div className="textarea-wrapper">
-                            <textarea onChange={onTextareaHandler} maxLength="5000" placeholder="내용을 입력하세요."></textarea>
+                            <textarea onChange={onTextareaHandler2} maxLength="5000" placeholder="내용을 입력하세요."></textarea>
                             <p className="box-explanation-p">
-                                <span>{inputCount}</span>
+                                <span>{inputCount2}</span>
                                 <span>/5000</span>
                             </p>
                         </div>
@@ -291,7 +304,8 @@ function EditModal({ closeeditModal, handleReviewUpdate }) {
                                         onChange={setPreviewImg} style={{ display: "none" }} />
                                 </button>
 
-                            </div></div>
+                            </div>
+                        </div>
 
                         <div className="image-container">
                             
@@ -869,7 +883,10 @@ function TabContent(props) {
                                             <div className="review-right-2">
                                                 <div className="review-pros">
                                                     <p className="review-pro">좋았던 점</p>
-                                                    <p className="review-p-content">{EditModal.content}</p>
+                                                    <p className="review-p-content">{EditModal.content} 내용(10글자)
+
+
+</p>
                                                     {/* <input className="review-p-content" placeholder="내용 (10글자)"></input> */}
 
                                                 </div>
