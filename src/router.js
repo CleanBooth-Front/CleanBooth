@@ -5,6 +5,7 @@ import Main from './메인/Main';
 import CleanExperience from './클린체험단/CleanExperience';
 import CleanApplication from './클린체험단/CleanApplication';
 import CleanApplicationComplete from './클린체험단/CleanApplicationComplete';
+import Show from './고객센터/Show';
 
 
 function router() {
@@ -12,7 +13,7 @@ function router() {
     <div>
         <Router>
             <Routes>
-                <Route path="/" element={<Main />} /> 
+                <Route path="/" element={<Show />} /> 
                 <Route path="/menu/1" element={<Main />} /> 
                 <Route path="/menu/2" element={<Main />} /> 
                 <Route path="/menu/4" element={<CleanExperience />} />
